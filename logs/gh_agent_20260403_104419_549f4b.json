@@ -1,0 +1,130 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "i know bro ",
+          "timestamp": "2026-04-03T10:44:19.231277+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"course materials overview\"}",
+          "tool_call_id": "m3vat05wx",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 476,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 15,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.3-70b-versatile",
+      "timestamp": "2026-04-03T10:44:19+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-12a5781d-7c4c-4a44-a131-ba5c771f1fab",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "id": "068529125b",
+              "question": "Course - Can I follow the course after it finishes?",
+              "sort_order": 8,
+              "content": "Yes, we will keep all the materials available, so you can follow the course at your own pace after it finishes.\n\nYou can also continue reviewing the homeworks and prepare for the next cohort. You can also start working on your final capstone project.",
+              "filename": "_questions/data-engineering-zoomcamp/general/008_068529125b_course-can-i-follow-the-course-after-it-finishes.md"
+            },
+            {
+              "id": "16005581f2",
+              "question": "Edit Course Profile.",
+              "sort_order": 13,
+              "content": "The display name listed on the leaderboard is an auto-generated randomized name. You can edit it to be a nickname or your real name if you prefer. Your entry on the Leaderboard is the one highlighted in light green.\n\nThe Certificate name should be your actual name that you want to appear on your certificate after completing the course.\n\nThe \"Display on Leaderboard\" option indicates whether you want your name to be listed on the course leaderboard.",
+              "filename": "_questions/data-engineering-zoomcamp/general/013_16005581f2_edit-course-profile.md"
+            },
+            {
+              "id": "9e508f2212",
+              "question": "Course: When does the course start?",
+              "sort_order": 1,
+              "content": "The next cohort starts January 12th, 2026. More info at [DTC](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).\n\n- Register before the course starts using this [link](https://airtable.com/shr6oVXeQvSI5HuWD).\n- Join the [course Telegram channel with announcements](https://t.me/dezoomcamp).\n- Don\u2019t forget to register in DataTalks.Club's Slack and [join](https://datatalks.club/docs/general/slack/) the channel.",
+              "filename": "_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md"
+            },
+            {
+              "id": "900f60fd25",
+              "question": "Certificate - Can I follow the course in a self-paced mode and get a certificate?",
+              "sort_order": 15,
+              "content": "No, you can only get a certificate if you finish the course with a \u201clive\u201d cohort. We don't award certificates for the self-paced mode. The reason is you need to peer-review capstone(s) after submitting a project. You can only peer-review projects at the time the course is running.",
+              "filename": "_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md"
+            },
+            {
+              "id": "dc06a38bc6",
+              "question": "How do I use Git / GitHub for this course?",
+              "sort_order": 42,
+              "content": "After you create a GitHub account, clone the course repo to your local machine using the process outlined in this video:\n\n[Git for Everybody: How to Clone a Repository from GitHub](https://www.youtube.com/watch?v=CKcqniGu3tA).\n\nHaving this local repository on your computer will make it easy to access the instructors\u2019 code and make pull requests if you want to add your own notes or make changes to the course content.\n\nYou will probably also create your own repositories to host your notes and versions of files. Here is a great tutorial that shows you how to do this:\n\n[How to Create a Git Repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository).\n\nRemember to ignore large databases, .csv, and .gz files, and other files that should not be saved to a repository. Use `.gitignore` for this:\n\n[.gitignore file](https://www.atlassian.com/git/tutorials/saving-changes/gitignore).\n\n**Important:**\n\n**NEVER store passwords or keys in a git repo** (even if the repo is set to private). Put files containing sensitive information (.env, secret.json, etc.) in your `.gitignore`.\n\nThis is also a great resource: [Dangit, Git!?!](https://dangitgit.com/)",
+              "filename": "_questions/data-engineering-zoomcamp/general/042_dc06a38bc6_how-do-i-use-git-github-for-this-course.md"
+            }
+          ],
+          "tool_call_id": "m3vat05wx",
+          "metadata": null,
+          "timestamp": "2026-04-03T10:44:19.477807+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "It seems like you're looking for information about the course materials. Based on the search results, here are some relevant details:\n\n* The course materials will be available after the course finishes, and you can follow the course at your own pace [(_questions/data-engineering-zoomcamp/general/008_068529125b_course-can-i-follow-the-course-after-it-finishes.md)](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/008_068529125b_course-can-i-follow-the-course-after-it-finishes.md).\n* You can edit your course profile, including your display name and certificate name [(_questions/data-engineering-zoomcamp/general/013_16005581f2_edit-course-profile.md)](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/013_16005581f2_edit-course-profile.md).\n* The course starts on January 12th, 2026, and you can register before the course starts [(_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md)](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md).\n* You can only get a certificate if you finish the course with a \"live\" cohort [(_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md)](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md).\n* You can use Git/GitHub for the course by cloning the course repo, creating your own repositories, and using .gitignore to ignore large files [(_questions/data-engineering-zoomcamp/general/042_dc06a38bc6_how-do-i-use-git-github-for-this-course.md)](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/042_dc06a38bc6_how-do-i-use-git-github-for-this-course.md).\n\nI hope this helps! Let me know if you have any other questions.",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1416,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 497,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.3-70b-versatile",
+      "timestamp": "2026-04-03T10:44:19+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-57604ce6-b82d-4e41-a7d4-b84d960f6337",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

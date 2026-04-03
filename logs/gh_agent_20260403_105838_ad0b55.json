@@ -1,0 +1,130 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "ok love what do i need to know too",
+          "timestamp": "2026-04-03T10:58:38.316574+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"what to know\"}",
+          "tool_call_id": "8v44a41cy",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 481,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 39,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-03T10:58:38+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-5cb9c79d-8a6c-45be-b9f4-e2959a92c73d",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "id": "4eba13edb1",
+              "question": "How to ask questions",
+              "sort_order": 41,
+              "content": "When the troubleshooting guide does not help resolve your issue and you need another pair of eyes, include as much information as possible when asking a question:\n\n- What are you coding on? What operating system are you using?\n- What command did you run, and which video or tutorial did you follow?\n- What error did you get? Does it have a line number pointing to the problematic code, and have you checked it for typos?\n- What have you tried that did not work? This is crucial because, without it, helpers might suggest steps mentioned in the error log first. Or just refer to this FAQ document.",
+              "filename": "_questions/data-engineering-zoomcamp/general/041_4eba13edb1_how-to-ask-questions.md"
+            },
+            {
+              "id": "a9c1fd2a8f",
+              "question": "Homework: What does it mean \u201cStop with loading the files into a bucket.\u201d?",
+              "sort_order": 36,
+              "content": "What they mean is that they don't want you to do anything more than that. You should load the files into the bucket and create an external table based on those files, but nothing like cleaning the data and putting it in parquet format.",
+              "filename": "_questions/data-engineering-zoomcamp/module-3/036_a9c1fd2a8f_homework-what-does-it-mean-stop-with-loading-the-f.md"
+            },
+            {
+              "id": "2220285e58",
+              "question": "Does anyone know nice and relatively large datasets?",
+              "sort_order": 5,
+              "content": "See a list of datasets here: [GitHub Datasets](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/projects/datasets.md)",
+              "filename": "_questions/data-engineering-zoomcamp/project/005_2220285e58_does-anyone-know-nice-and-relatively-large-dataset.md"
+            },
+            {
+              "id": "d3f485cd10",
+              "question": "Homework: What are homework and project deadlines?",
+              "sort_order": 16,
+              "content": "2025 deadlines will be announced on [the course website](https://courses.datatalks.club/de-zoomcamp-2025/) and in [Google Calendar](https://calendar.google.com/calendar/?cid=ZXIxcjA1M3ZlYjJpcXU0dTFmaG02MzVxMG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).\n\nYou can find the 2024 deadlines here: [2024 Deadlines Spreadsheet](https://docs.google.com/spreadsheets/d/e/2PACX-1vQACMLuutV5rvXg5qICuJGL-yZqIV0FBD84CxPdC5eZHf8TfzB-CJT_3Mo7U7oGVTXmSihPgQxuuoku/pubhtml).\n\nAlso, take note of announcements from @Au-Tomator for any extensions or other news. The form may also show the updated deadline if the instructor(s) have updated it.",
+              "filename": "_questions/data-engineering-zoomcamp/general/016_d3f485cd10_homework-what-are-homework-and-project-deadlines.md"
+            },
+            {
+              "id": "33fc260cd8",
+              "question": "Course: What can I do before the course starts?",
+              "sort_order": 5,
+              "content": "Start by installing and setting up all the dependencies and requirements:\n\n- Google Cloud account\n- Google Cloud SDK\n- Python 3 (installed with Anaconda)\n- Terraform\n- Git\n\nLook over the prerequisites and syllabus to see if you are comfortable with these subjects.",
+              "filename": "_questions/data-engineering-zoomcamp/general/005_33fc260cd8_course-what-can-i-do-before-the-course-starts.md"
+            }
+          ],
+          "tool_call_id": "8v44a41cy",
+          "metadata": null,
+          "timestamp": "2026-04-03T10:58:38.512440+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "It looks like the search results didn't seem to have anything related to the question \"what do i need to know too\" but I can offer some general guidance.\n\nIf you're referring to the course materials, it's always a good idea to review the prerequisites and syllabus for the course you're taking. This will give you an idea of what topics you'll be covering and what skills you'll need to have.\n\nAdditionally, you may want to consider the following:\n\n* Familiarize yourself with the course format and schedule\n* Set up your learning environment, including any necessary software or tools\n* Review the course website and any additional resources provided by the instructor\n* Ask questions if you're unsure about anything\n\nIf you're referring to the Zoomcamp course, you can find the information on the course website or in the provided documentation.\n\nYou can also search for specific topics or questions related to the course you're taking and check the provided documentation for the answers.\n\n[LINK TITLE](https://github.com/DataTalksClub/data-engineering-zoomcamp/blob/main/)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1326,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 216,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-03T10:58:38+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-1614d00e-276a-48a1-8fb6-f88bce9bd552",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

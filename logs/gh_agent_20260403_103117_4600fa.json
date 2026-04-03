@@ -1,0 +1,49 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "tools": [],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "do you think i should join ",
+          "timestamp": "2026-04-03T10:31:17.036676+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "To provide a more informed answer, I'd need to know what you're considering joining. Could you please provide more context or information about what you're thinking of joining? That way, I can try to find relevant information in the course materials to help guide your decision.\n\nIf I don't find any specific information, I can still offer general guidance. For now, I'd recommend weighing the pros and cons, considering your goals and interests, and thinking about how this opportunity aligns with them.\n\nYou can check the FAQ section for general guidance on making decisions: [FAQ](https://github.com/DataTalksClub/faq/blob/main/)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 154,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 129,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.3-70b-versatile",
+      "timestamp": "2026-04-03T10:31:17+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-1bccd1ab-c2d6-4f6f-9e52-4e7db6295b61",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

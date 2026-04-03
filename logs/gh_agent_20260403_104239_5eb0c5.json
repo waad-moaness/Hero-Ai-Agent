@@ -1,0 +1,130 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.3-70b-versatile",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "can i still join the course",
+          "timestamp": "2026-04-03T10:42:38.895678+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"join course deadline\"}",
+          "tool_call_id": "kv1gq2d97",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 478,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 15,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.3-70b-versatile",
+      "timestamp": "2026-04-03T10:42:39+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-053e7e63-2aee-4e24-a6ea-ba68f1b06823",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "id": "3f1424af17",
+              "question": "Course: Can I still join the course after the start date?",
+              "sort_order": 3,
+              "content": "Yes, even if you don't register, you're still eligible to submit the homework.\n\nBe aware, however, that there will be deadlines for turning in homeworks and the final projects. So don't leave everything for the last minute.",
+              "filename": "_questions/data-engineering-zoomcamp/general/003_3f1424af17_course-can-i-still-join-the-course-after-the-start.md"
+            },
+            {
+              "id": "9e508f2212",
+              "question": "Course: When does the course start?",
+              "sort_order": 1,
+              "content": "The next cohort starts January 12th, 2026. More info at [DTC](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html).\n\n- Register before the course starts using this [link](https://airtable.com/shr6oVXeQvSI5HuWD).\n- Join the [course Telegram channel with announcements](https://t.me/dezoomcamp).\n- Don\u2019t forget to register in DataTalks.Club's Slack and [join](https://datatalks.club/docs/general/slack/) the channel.",
+              "filename": "_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md"
+            },
+            {
+              "id": "16005581f2",
+              "question": "Edit Course Profile.",
+              "sort_order": 13,
+              "content": "The display name listed on the leaderboard is an auto-generated randomized name. You can edit it to be a nickname or your real name if you prefer. Your entry on the Leaderboard is the one highlighted in light green.\n\nThe Certificate name should be your actual name that you want to appear on your certificate after completing the course.\n\nThe \"Display on Leaderboard\" option indicates whether you want your name to be listed on the course leaderboard.",
+              "filename": "_questions/data-engineering-zoomcamp/general/013_16005581f2_edit-course-profile.md"
+            },
+            {
+              "id": "900f60fd25",
+              "question": "Certificate - Can I follow the course in a self-paced mode and get a certificate?",
+              "sort_order": 15,
+              "content": "No, you can only get a certificate if you finish the course with a \u201clive\u201d cohort. We don't award certificates for the self-paced mode. The reason is you need to peer-review capstone(s) after submitting a project. You can only peer-review projects at the time the course is running.",
+              "filename": "_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md"
+            },
+            {
+              "id": "068529125b",
+              "question": "Course - Can I follow the course after it finishes?",
+              "sort_order": 8,
+              "content": "Yes, we will keep all the materials available, so you can follow the course at your own pace after it finishes.\n\nYou can also continue reviewing the homeworks and prepare for the next cohort. You can also start working on your final capstone project.",
+              "filename": "_questions/data-engineering-zoomcamp/general/008_068529125b_course-can-i-follow-the-course-after-it-finishes.md"
+            }
+          ],
+          "tool_call_id": "kv1gq2d97",
+          "metadata": null,
+          "timestamp": "2026-04-03T10:42:39.216370+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are a helpful assistant that answers questions about documentation.  \n\nUse the search tool to find relevant information from the course materials before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nReplace it with the full path to the GitHub repository:\n\"https://github.com/DataTalksClub/faq/blob/main/\"\nFormat: [LINK TITLE](FULL_GITHUB_LINK)\n\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "You can still join the course after the start date, but be aware that there will be deadlines for turning in homework and the final project. It's recommended to register before the course starts using [this link](https://airtable.com/shr6oVXeQvSI5HuWD) and join the [course Telegram channel with announcements](https://t.me/dezoomcamp). For more information, check out the DataTalks.Club [blog post](https://datatalks.club/blog/guide-to-free-online-courses-at-datatalks-club.html) and [general Slack channel](https://datatalks.club/docs/general/slack/). \n\nFor more information, you can refer to the following sources:\n- [_questions/data-engineering-zoomcamp/general/003_3f1424af17_course-can-i-still-join-the-course-after-the-start.md](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/003_3f1424af17_course-can-i-still-join-the-course-after-the-start.md)\n- [_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/001_9e508f2212_course-when-does-the-course-start.md)\n- [_questions/data-engineering-zoomcamp/general/013_16005581f2_edit-course-profile.md](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/013_16005581f2_edit-course-profile.md)\n- [_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/015_900f60fd25_certificate-can-i-follow-the-course-in-a-self-pace.md)\n- [_questions/data-engineering-zoomcamp/general/008_068529125b_course-can-i-follow-the-course-after-it-finishes.md](https://github.com/DataTalksClub/faq/blob/main/_questions/data-engineering-zoomcamp/general/008_068529125b_course-can-i-follow-the-course-after-it-finishes.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1184,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 499,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.3-70b-versatile",
+      "timestamp": "2026-04-03T10:42:39+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-95cee601-0a6a-4506-8688-f7b3536f45b7",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}
