@@ -1,0 +1,115 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what is this repo about ",
+          "timestamp": "2026-04-04T12:18:02.480683+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"Hugging Face Hub documentation repo\"}",
+          "tool_call_id": "n26pwcjdy",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 633,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 138,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:18:02+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-9a24da35-b097-4f5c-b1bd-0a39e7fa9358",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 0,
+              "content": "**Doc request**\nA clear and concise description of what you would like to see documented or what is unclear.\n\n**Additional context**\nAdd any other context or screenshots about the feature request here.",
+              "name": "Documentation request",
+              "about": "Suggest an idea for new docs",
+              "title": "",
+              "labels": "docs",
+              "assignees": "",
+              "filename": ".github/ISSUE_TEMPLATE/documentation-request.md"
+            },
+            {
+              "start": 3000,
+              "content": "ings, DOI removal, resource group assignment, and general repo settings (visibility, gating, discussions, etc.). Also LFS file deletion.\n  - **Events:** `repo.create`, `repo.delete`, `repo.move`, `repo.disable`, `repo.removeDisable`, `repo.duplication`, `repo.delete_doi`, `repo.update_resource_group`, `repo.update_settings`, `repo.delete_lfs_file`\n- **Collections** \u2014 Creation and deletion of collections.\n  - **Events:** `collection.create`, `collection.delete`\n- **Repository security** \u2014 Secrets and variables (individual and bulk add/update/remove).\n  - **Events (secrets):** `repo.add_secret`, `repo.update_secret`, `repo.remove_secret`, `repo.add_secrets`, `repo.remove_secrets`\n  - **Events (variables):** `repo.add_variable`, `repo.update_variable`, `repo.remove_variable`, `repo.add_variables`, `repo.remove_variables`\n- **Spaces configuration** \u2014 Storage tier changes, hardware (flavor) updates, and sleep time adjustments.\n  - **Events:** `spaces.add_storage`, `spaces.remove_storage`, `",
+              "filename": "docs/hub/audit-logs.md"
+            },
+            {
+              "start": 4500,
+              "content": "by your webhook handler as an `\"update\"` action on the `\"repo.config\"` scope.\n\n### Repo\n\nIn the current version of webhooks, the top-level property `repo` is always specified, as events can always be associated with a repo. For example, consider the following value:\n\n```json\n\"repo\": {\n\t\"type\": \"model\",\n\t\"name\": \"some-user/some-repo\",\n\t\"id\": \"6366c000a2abcdf2fd69a080\",\n\t\"private\": false,\n\t\"url\": {\n\t\t\"web\": \"https://huggingface.co/some-user/some-repo\",\n\t\t\"api\": \"https://huggingface.co/api/models/some-user/some-repo\"\n\t},\n\t\"headSha\": \"c379e821c9c95d613899e8c4343e4bfee2b0c600\",\n\t\"owner\": {\n\t\t\"id\": \"61d2000c3c2083e1c08af22d\"\n\t}\n}\n```\n\n`repo.headSha` is the sha of the latest commit on the repo's `main` branch. It is only sent when `event.scope` starts with `\"repo\"`, not on community events like discussions and comments.\n\n### Code changes\n\nOn code changes, the top-level property `updatedRefs` is specified on repo events. It is an array of references that have been updated. Here is an example v",
+              "filename": "docs/hub/webhooks.md"
+            }
+          ],
+          "tool_call_id": "n26pwcjdy",
+          "metadata": null,
+          "timestamp": "2026-04-04T12:18:02.886018+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "The searched repo provides documentation on the Hugging Face Hub, a platform for managing and sharing machine learning models. The documentation covers various topics, including:\n\n* Documentation requests: A way to suggest new documentation or clarify unclear sections.\n* Audit logs: A record of changes made to a repository, including events such as creation, deletion, and updates to configurations, secrets, and variables.\n* Webhooks: A way for users to receive notifications when changes are made to a repository, with support for custom event handlers.\n\nOverall, this documentation is useful for users who want to understand how to manage and use the Hugging Face Hub.\n\n[Source: docs/hub/audit-logs.md](https://github.com/huggingface/hub-docs/blob/main/docs/hub/audit-logs.md)\n[Source: docs/hub/webhooks.md](https://github.com/huggingface/hub-docs/blob/main/docs/hub/webhooks.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1360,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 190,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:18:03+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-0f567594-2875-4aaa-9fda-909939c56844",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

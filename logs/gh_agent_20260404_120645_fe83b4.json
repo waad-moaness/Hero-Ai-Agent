@@ -1,0 +1,115 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use Markdown headings (###) to organize different concepts.\n3. Use bullet points or numbered lists for features, steps, or benefits.\n4. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n5. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what is this repo about ",
+          "timestamp": "2026-04-04T12:06:44.054040+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use Markdown headings (###) to organize different concepts.\n3. Use bullet points or numbered lists for features, steps, or benefits.\n4. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n5. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"Hugging Face Hub repository description\"}",
+          "tool_call_id": "3jrd7qwq6",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 646,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 54,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:06:44+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-afb28e8f-cdba-49ea-9e40-352b0aca5e4b",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "content": "# Datasets\n\nThe Hugging Face Hub is home to a growing collection of datasets that span a variety of domains and tasks. These docs will guide you through interacting with the datasets on the Hub, uploading new datasets, exploring the datasets contents, and using datasets in your projects.\n\nThis documentation focuses on the datasets functionality in the Hugging Face Hub and how to use the datasets with supported libraries. For detailed information about the \ud83e\udd17 Datasets python package, visit the [\ud83e\udd17 Datasets documentation](/docs/datasets/index).\n\n## Contents\n\n- [Datasets Overview](./datasets-overview)\n- [Dataset Cards](./datasets-cards)\n- [Gated Datasets](./datasets-gated)\n- [Uploading Datasets](./datasets-adding)\n- [Downloading Datasets](./datasets-downloading)\n- [Libraries](./datasets-libraries)\n- [Dataset Viewer](./datasets-viewer)\n- [Data files Configuration](./datasets-data-files-configuration)",
+              "filename": "docs/hub/datasets.md"
+            },
+            {
+              "content": "# Academia Hub\n\n> [!TIP]\n> Ask your university's IT or Procurement Team to <a href=\"https://huggingface.co/contact/sales?from=academia\" target=\"_blank\">get in touch</a> from a university-affiliated email address to initiate the subscription process.\n\n<a href=\"https://huggingface.co/contact/sales?from=academia\" class=\"flex justify-center\">\n    <img class=\"block\" src=\"https://huggingface.co/datasets/Chunte/documentation-images/resolve/main/AcademiaHub.png\" />\n</a>\n\n## Accelerate your university's AI research, publication pipeline, and collaboration at scale\n\nThe Hugging Face Hub is where leading researchers and developers across academia and industry collaborate on AI throughout the whole research lifecycle. \n\nAcademia Hub brings that proven ecosystem to your university, giving your researchers everything they need to work securely, reproducibly, and at scale: compute, storage, collaboration, and governance, all managed through your institution.\n\nWith Academia Hub, you get **university-level seat management and accounts for researchers, professors, and/or students.**\n\n<div class=\"flex flex-wrap justify-center items-center gap-8 my-8\">\n  <img src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/academia-hub/Zurich.png\" alt=\"ETH Zurich logo\" class=\"h-24 object-contain\"/>\n  <img src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/academia-hub/ESCP_LOGO_CMJN.png\" alt=\"ESCP Business School logo\" class=\"h-24 object-contain\"/>\n  <img src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/academia-hub/The_2025_MBZUAI_logo.png\" alt=\"MBZUAI logo\" class=\"h-24 object-contain\"/>\n  <img src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/academia-hub/epita.png\" alt=\"EPITA logo\" class=\"h-24 object-contain\"/>\n  <img src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/academia-hub/logo-UT-site.png\" alt=\"UT logo\" class=\"h-24 object-contain\"/>\n</div>\n\n## Why Academia Hub: Built for the complete research lifecycle\nAcademia Hub scales with your research from early prototypes to large-scale published models while ensuring security, reproducibility, and seamless collaboration across your entire institution.\n\n1. **Store & version** datasets, models, and results with 1TB private storage per seat.\n2. **Collaborate & review** with co-authors and lab members in shared workspaces.\n3. **Prototype** ideas using interactive Spaces and hosted notebooks.\n4. **Train & scale** with managed GPUs and tracked runs.\n5. **Publish & share** using model cards, DOIs, and dataset releases.\n6. **Preserve** your work for reproducibility and future research. All backed by enterprise-grade infrastructure, institutional governance, and storage that grows with your needs.\n\n## Key features of Academia Hub\n\n***For researchers and students***\n- **Storage**: 1 TB private storage per seat (e.g., 400 seats = 400 TB) powered by Xet, purpose-built for versioning large AI models and datasets; expanded public storage; Dataset Viewer for private datasets.\n- **Hosting & demos**: <a href=\"https://huggingface.co/docs/hub/spaces\" target=\"_blank\">Spaces</a> Hosting for scalable AI demos and applications powered by ZeroGPU (5\u00d7 priority quota); <a href=\"https://huggingface.co/docs/hub/spaces-dev-mode\" target=\"_blank\">Dev Mode</a> with SSH/VS Code access for development.\n- **Compute**: Priority GPU access (H100/H200) for training; managed runs with experiment tracking.\n- **Collaboration**: Team workspaces with version control, peer review, and shared governance.\n- **Publishing**: Share the research artifacts like models and datasets with the global AI community through citable releases with model cards, dataset cards, and DOIs.\n\n***For administrators***\n- **Pricing**: $10/seat/month (volume-based pricing); $2/seat/month compute credits included (top-ups available).\n- **Admin & security**: University-level seat management for researchers, professors, and students; centralized administration; SSO with university domain.\n\n***For your research community***\n- **Community & resources**: Connect with peers; curated models/datasets/projects for academia.\n\n## How to get started\n\nResearchers and students: <a href=\"https://huggingface.co/contact/sales?from=academia\" target=\"_blank\">Contact us</a> to express interest in Academia Hub and help us connect with your university's IT or Procurement Team.\n\nIT or Procurement staff: <a href=\"https://huggingface.co/contact/sales?from=academia\" target=\"_blank\">Get in touch</a> directly to set up your institution's Academia Hub subscription or find out more about how your institution can benefit from Academia Hub.",
+              "filename": "docs/hub/academia-hub.md"
+            },
+            {
+              "content": "# The Model Hub\n\n## What is the Model Hub?\n\nThe Model Hub is where the members of the Hugging Face community can host all of their model checkpoints for simple storage, discovery, and sharing. Download pre-trained models with the [`huggingface_hub` client library](https://huggingface.co/docs/huggingface_hub/index), with \ud83e\udd17  [`Transformers`](https://huggingface.co/docs/transformers/index) for fine-tuning and other usages or with any of the over [15 integrated libraries](./models-libraries). You can even leverage [Inference Providers](/docs/inference-providers/) or [Inference Endpoints](https://huggingface.co/docs/inference-endpoints) to use models in production settings.\n\nYou can refer to the following video for a guide on navigating the Model Hub:\n\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/XvSGPZFEjDY\" title=\"Model Hub Video\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n\nTo learn how to upload models to the Hub, you can refer to the [Repositories Getting Started Guide](./repositories-getting-started).",
+              "filename": "docs/hub/models-the-hub.md"
+            },
+            {
+              "content": "# Security\n\nThe Hugging Face Hub offers several security features to ensure that your code and data are secure. Beyond offering [private repositories](./repositories-settings#private-repositories) for models, datasets, and Spaces, the Hub supports access tokens, resource groups, MFA, commit signatures, malware scanning, and more.\n\nHugging Face is GDPR compliant. If a contract or specific data storage is something you'll need, we recommend taking a look at our [Team & Enterprise Support](https://huggingface.co/support). Hugging Face can also offer Business Associate Addendums or GDPR data processing agreements through an [Enterprise Plan](https://huggingface.co/pricing). \n\nHugging Face is also [SOC2 Type 2 certified](https://us.aicpa.org/interestareas/frc/assuranceadvisoryservices/aicpasoc2report.html), meaning we provide security certification to our customers and actively monitor and patch any security weaknesses.\n\n<img width=\"150\" src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/security-soc-1.jpg\">\n\nFor any other security questions, please feel free to send us an email at security@huggingface.co.\n\n## Contents\n\n- [User Access Tokens](./security-tokens)\n- [Two-Factor Authentication (2FA)](./security-2fa)\n- [Git over SSH](./security-git-ssh)\n- [Signing commits with GPG](./security-gpg)\n- [Single Sign-On (SSO)](./security-sso)\n- [Advanced Access Control (Resource Groups)](./security-resource-groups)\n- [Malware Scanning](./security-malware)\n- [Pickle Scanning](./security-pickle)\n- [Secrets Scanning](./security-secrets)\n- [Third-party scanner: Protect AI](./security-protectai)\n- [Third-party scanner: JFrog](./security-jfrog)",
+              "filename": "docs/hub/security.md"
+            },
+            {
+              "content": "# Spaces\n\n[Hugging Face Spaces](https://huggingface.co/spaces) offer a simple way to host ML demo apps directly on your profile or your organization's  profile. This allows you to create your ML portfolio, showcase your projects at conferences or to stakeholders, and work collaboratively with other people in the ML ecosystem.\n\nWe have built-in support for an awesome SDK that let you build cool apps in Python in a matter of minutes: **[Gradio](https://gradio.app/)**, but you can also unlock the whole power of Docker and host an arbitrary Dockerfile. Finally, you can create static Spaces using JavaScript and HTML.\n\nYou'll also be able to upgrade your Space to run [on a GPU or other accelerated hardware](./spaces-gpus). \u26a1\ufe0f\n\n## Contents\n\n- [Spaces Overview](./spaces-overview)\n  - [Handling Spaces Dependencies](./spaces-dependencies)\n  - [Spaces Settings](./spaces-settings)\n  - [Using OpenCV in Spaces](./spaces-using-opencv)\n  - [Using Spaces for Organization Cards](./spaces-organization-cards)\n  - [More ways to create Spaces](./spaces-more-ways-to-create)\n  - [Managing Spaces with Github Actions](./spaces-github-actions)\n  - [How to Add a Space to ArXiv](./spaces-add-to-arxiv)\n- [Spaces Dev Mode](./spaces-dev-mode)\n- [Spaces GPU Upgrades](./spaces-gpus)\n- [Spaces Persistent Storage](./spaces-storage)\n- [Gradio Spaces](./spaces-sdks-gradio)\n- [Docker Spaces](./spaces-sdks-docker)\n- [Static HTML Spaces](./spaces-sdks-static)\n- [Custom Python Spaces](./spaces-sdks-python)\n- [Embed your Space](./spaces-embed)\n- [Run your Space with Docker](./spaces-run-with-docker)\n- [Reference](./spaces-config-reference)\n- [Changelog](./spaces-changelog)\n\n## Contact\n\nFeel free to ask questions on the [forum](https://discuss.huggingface.co/c/spaces/24) if you need help with making a Space, or if you run into any other issues on the Hub.\n\nIf you're interested in infra challenges, custom demos, advanced GPUs, or something else, please reach out to us by sending an email to **website at huggingface.co**.\n\nYou can also tag us [on Twitter](https://twitter.com/huggingface)! \ud83e\udd17",
+              "filename": "docs/hub/spaces.md"
+            }
+          ],
+          "tool_call_id": "3jrd7qwq6",
+          "metadata": null,
+          "timestamp": "2026-04-04T12:06:44.339438+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use Markdown headings (###) to organize different concepts.\n3. Use bullet points or numbered lists for features, steps, or benefits.\n4. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n5. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "This repository is about the Hugging Face Hub, a platform for collaborative AI research and development. It provides a centralized location for storing, sharing, and discovering pre-trained models, datasets, and other resources.\n\nThe repository contains several sections, including:\n\n1. **Datasets**: Information on how to interact with datasets on the Hub, upload new datasets, and use them in projects.\n2. **Academia Hub**: A feature of the Hub specifically designed for academic institutions, providing access to compute resources, data storage, collaboration tools, and more.\n3. **Model Hub**: A repository for hosting and sharing AI models, with features like model cards, dataset cards, and DOIs for citation.\n4. **Security**: Information on the Hub's security features, including private repositories, access tokens, resource groups, and more.\n5. **Spaces**: A way to host ML demo apps directly on your profile or organization's profile, with features like Gradio, Docker, and JavaScript support.\n\nOverall, the Hugging Face Hub is a comprehensive platform for AI research and development, providing a range of tools and resources to support collaboration, innovation, and dissemination of knowledge. [Source: hub.md](https://github.com/huggingface/hub-docs/blob/main/hub.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 3354,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 258,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:06:45+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-3887df60-e739-4457-bfd3-74838697a7d1",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

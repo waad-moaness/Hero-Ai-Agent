@@ -1,6 +1,6 @@
 import streamlit as st
 import asyncio
-
+import time 
 import ingest
 import search_agent
 import logs
@@ -9,14 +9,12 @@ import logs
 # --- Initialization ---
 @st.cache_resource
 def init_agent():
-    repo_owner = "DataTalksClub"
-    repo_name = "faq"
+    repo_owner = "huggingface"
+    repo_name = "hub-docs"
 
-    def filter(doc):
-        return "data-engineering" in doc["filename"]
 
     st.write("🔄 Indexing repo...")
-    index = ingest.index_data(repo_owner, repo_name, filter=filter)
+    index = ingest.index_data(repo_owner, repo_name)
     agent = search_agent.init_agent(index, repo_owner, repo_name)
     return agent
 
@@ -24,9 +22,9 @@ def init_agent():
 agent = init_agent()
 
 # --- Streamlit UI ---
-st.set_page_config(page_title="AI FAQ Assistant", page_icon="🤖", layout="centered")
-st.title("🤖 AI FAQ Assistant")
-st.caption("Ask me anything about the DataTalksClub/faq repository")
+st.set_page_config(page_title="Hugging Face AI Assistant", page_icon="🤖", layout="centered")
+st.title("🤖 Hugging Face AI Assistant")
+st.caption("Ask me anything about the Hugging Face documentation repository!")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -58,8 +56,9 @@ def stream_response(prompt: str):
         st.session_state._last_response = full_text
 
         # ✅ Fake streaming (UI only)
-        for word in full_text.split():
-            yield word + " "
+        for chunk in full_text.split(" "):
+            yield chunk + " "
+            time.sleep(0.02) 
 
     except Exception as e:
         yield "⚠️ Error: " + str(e)

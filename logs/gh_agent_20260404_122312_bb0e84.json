@@ -1,0 +1,110 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "how do i deploy my api to hugging face ",
+          "timestamp": "2026-04-04T12:23:11.097815+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"deploy api to Hugging Face Hub\"}",
+          "tool_call_id": "9przcx3z9",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 638,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 374,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:23:11+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-66c93f1c-9481-4558-bbb1-6d0c90b48afc",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 500,
+              "content": " Enjoy!\n\n> [!NOTE]\n> We've moved the Hub API Endpoints documentation to our [OpenAPI Playground](https://huggingface.co/spaces/huggingface/openapi), which provides a comprehensive reference that's always up-to-date. You can also access the OpenAPI specification directly at [https://huggingface.co/.well-known/openapi.json](https://huggingface.co/.well-known/openapi.json), or in Markdown version if you want to send it to your Agent: [https://huggingface.co/.well-known/openapi.md](https://huggingface.co/.well-known/openapi.md).\n\n> [!NOTE]\n> All API calls are subject to the HF-wide [Rate limits](./rate-limits). Upgrade your account if you need elevated, large-scale access.\n\n<div class=\"flex justify-center\">\n<a href=\"https://huggingface.co/spaces/huggingface/openapi\" target=\"_blank\">\n<img class=\"w-full object-contain\" src=\"https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/hub/hub-api-playground.png\"/>\n</a>\n</div>",
+              "filename": "docs/hub/api.md"
+            },
+            {
+              "start": 0,
+              "content": "# Hub API Endpoints\n\nWe have open endpoints that you can use to retrieve information from the Hub as well as perform certain actions such as creating model, dataset or Space repos. We offer a wrapper Python client, [`huggingface_hub`](https://github.com/huggingface/huggingface_hub), and a JS client, [`huggingface.js`](https://github.com/huggingface/huggingface.js), that allow easy access to these endpoints. We also provide [webhooks](./webhooks) to receive real-time incremental info about repos. Enjoy!\n\n> [!NOTE]\n> We've moved the Hub API Endpoints documentation to our [OpenAPI Playground](https://huggingface.co/spaces/huggingface/openapi), which provides a comprehensive reference that's always up-to-date. You can also access the OpenAPI specification directly at [https://huggingface.co/.well-known/openapi.json](https://huggingface.co/.well-known/openapi.json), or in Markdown version if you want to send it to your Agent: [https://huggingface.co/.well-known/openapi.md](https://huggingfa",
+              "filename": "docs/hub/api.md"
+            },
+            {
+              "start": 0,
+              "content": "# Deploy models to Amazon SageMaker\n\nDeploying a \ud83e\udd17 Transformers models in SageMaker for inference is as easy as:\n\n```python\nfrom sagemaker.huggingface import HuggingFaceModel\n\n# create Hugging Face Model Class and deploy it as SageMaker endpoint\nhuggingface_model = HuggingFaceModel(...).deploy()\n```\n\nThis guide will show you how to deploy models with zero-code using the [Inference Toolkit](https://github.com/aws/sagemaker-huggingface-inference-toolkit). The Inference Toolkit builds on top of the [`pipeline` feature](https://huggingface.co/docs/transformers/main_classes/pipelines) from \ud83e\udd17 Transformers. Learn how to:\n\n- [Install and setup the Inference Toolkit](#installation-and-setup).\n- [Deploy a \ud83e\udd17 Transformers model trained in SageMaker](#deploy-a-transformer-model-trained-in-sagemaker).\n- [Deploy a \ud83e\udd17 Transformers model from the Hugging Face [model Hub](https://huggingface.co/models)](#deploy-a-model-from-the-hub).\n- [Run a Batch Transform Job using \ud83e\udd17 Transformers and Amazon SageMaker]",
+              "filename": "docs/sagemaker/source/tutorials/sagemaker-sdk/deploy-sagemaker-sdk.md"
+            }
+          ],
+          "tool_call_id": "9przcx3z9",
+          "metadata": null,
+          "timestamp": "2026-04-04T12:23:11.943668+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "To deploy your API to Hugging Face, you can follow these steps:\n\n1. **Create a Hugging Face account**: If you haven't already, create a Hugging Face account on the [Hugging Face website](https://huggingface.co/).\n2. **Prepare your model**: Make sure your model is trained and saved in a format that can be used by Hugging Face (e.g., [TensorFlow](https://www.tensorflow.org/), [PyTorch](https://pytorch.org/), or [Hugging Face Transformers](https://huggingface.co/transformers/)).\n3. **Create a Hugging Face repo**: Create a new repository on Hugging Face by clicking on the \"+\" button on the top right corner of the [Hugging Face website](https://huggingface.co/). Choose the type of repository you want to create (e.g., model, dataset, or space).\n4. **Upload your model**: Upload your trained model to your newly created repository on Hugging Face.\n5. **Configure API endpoint**: Configure your API endpoint to point to the Hugging Face repository. You can do this by adding a `model_name_or_path` parameter to your API endpoint, which should be the name of your repository (e.g., `model_name_or_path=\"your-repo-name\"`).\n6. **Deploy your API**: Deploy your API using a deployment platform like [AWS SageMaker](https://aws.amazon.com/sagemaker/), [Google Cloud AI Platform](https://cloud.google.com/ai-platform), or [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning/).\n\nNote: You can also use the [Hugging Face Inference Toolkit](https://github.com/aws/sagemaker-huggingface-inference-toolkit) to deploy your model with zero-code using the [Inference Toolkit](https://huggingface.co/docs/transformers/main_classes/pipelines).\n\n[Source: docs/sagemaker/source/tutorials/sagemaker-sdk/deploy-sagemaker-sdk.md](https://github.com/huggingface/hub-docs/blob/main/docs/sagemaker/source/tutorials/sagemaker-sdk/deploy-sagemaker-sdk.md)\n\n**References:**\n\n* [Hugging Face API Endpoints](https://huggingface.co/docs/hub/api-endpoints)\n* [Hugging Face Inference Toolkit](https://github.com/aws/sagemaker-huggingface-inference-toolkit)\n* [AWS SageMaker](https://aws.amazon.com/sagemaker/)\n* [Google Cloud AI Platform](https://cloud.google.com/ai-platform)\n* [Azure Machine Learning](https://azure.microsoft.com/en-us/services/machine-learning)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1462,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 553,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:23:12+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-dc96265c-6720-4182-b0bb-29890dc21637",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}

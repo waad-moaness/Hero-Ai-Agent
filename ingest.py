@@ -2,6 +2,7 @@ import io
 import zipfile
 import requests
 import frontmatter
+import yaml
 
 from minsearch import Index
 
@@ -21,13 +22,31 @@ def read_repo_data(repo_owner, repo_name):
             continue
 
         with zf.open(file_info) as f_in:
-            content = f_in.read()
-            post = frontmatter.loads(content)
-            data = post.to_dict()
+            # We decode to string here to ensure frontmatter parses it correctly
+            # (Sometimes reading directly from zip returns bytes which can cause issues)
+            try:
+                content = f_in.read().decode('utf-8') 
+            except UnicodeDecodeError:
+                print(f"⚠️ Skipping {file_info.filename}: Not a valid UTF-8 text file.")
+                continue
 
-            _, filename_repo = file_info.filename.split('/', maxsplit=1)
-            data['filename'] = filename_repo
-            repository_data.append(data)
+            try:
+                # Attempt to parse the YAML frontmatter
+                post = frontmatter.loads(content)
+                data = post.to_dict()
+
+                _, filename_repo = file_info.filename.split('/', maxsplit=1)
+                data['filename'] = filename_repo
+                repository_data.append(data)
+                
+            except yaml.YAMLError as e:
+                # Skip files with broken YAML headers
+                print(f"⚠️ Skipping {file_info.filename} due to broken frontmatter: {e}")
+                continue
+            except Exception as e:
+                # Catch any other unexpected parsing errors
+                print(f"⚠️ Error reading {file_info.filename}: {e}")
+                continue
 
     zf.close()
 
@@ -67,8 +86,8 @@ def index_data(
         repo_owner,
         repo_name,
         filter=None,
-        chunk=False,
-        chunking_params=None,
+        chunk=True,
+        chunking_params={'size': 1000, 'step': 500}
     ):
     docs = read_repo_data(repo_owner, repo_name)
 

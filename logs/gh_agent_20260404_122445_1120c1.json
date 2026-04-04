@@ -1,0 +1,110 @@
+{
+  "agent_name": "gh_agent",
+  "system_prompt": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+  "provider": "groq",
+  "model": "llama-3.1-8b-instant",
+  "tools": [
+    "search"
+  ],
+  "messages": [
+    {
+      "parts": [
+        {
+          "content": "what is a model card ",
+          "timestamp": "2026-04-04T12:24:43.941911+00:00",
+          "part_kind": "user-prompt"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "args": "{\"query\":\"model card\"}",
+          "tool_call_id": "h6d0mab5n",
+          "part_kind": "tool-call"
+        }
+      ],
+      "usage": {
+        "input_tokens": 633,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 260,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:24:44+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "tool_calls"
+      },
+      "provider_response_id": "chatcmpl-343b2799-3dfa-49eb-afd8-f51928c80ca2",
+      "finish_reason": "tool_call"
+    },
+    {
+      "parts": [
+        {
+          "tool_name": "search",
+          "content": [
+            {
+              "start": 7000,
+              "content": "Model Card](https://github.com/openai/gpt-2/blob/master/model_card.md) \n* [GPT-3 Model Card](https://github.com/openai/gpt-3/blob/master/model-card.md)\n* [DALL-E 2 Preview System Card](https://github.com/openai/dalle-2-preview/blob/main/system-card.md)\n* [OPT-175B model card](https://arxiv.org/pdf/2205.01068.pdf)\n\n### MODEL CARD GENERATION TOOLS\nTools for programmatically or interactively generating model cards include: \n\n* [Salesforce Model Card Creation](https://help.salesforce.com/s/articleView?id=release-notes.rn_bi_edd_model_card.htm&type=5&release=232)\n* [TensorFlow Model Card Toolkit](https://ai.googleblog.com/2020/07/introducing-model-card-toolkit-for.html)\n  * [Python library](https://pypi.org/project/model-card-toolkit/)\n* [GSA / US Census Bureau Collaboration on Model Card Generator](https://bias.xd.gov/resources/model-card-generator/)\n* [Parl.AI Auto Generation Tool](https://parl.ai/docs/tutorial_model_cards.html)\n* [VerifyML Model Card Generation Web Tool](https://www.veri",
+              "filename": "docs/hub/model-card-appendix.md"
+            },
+            {
+              "start": 3000,
+              "content": "onnect together previous work on Model Cards:\n\n1) An updated Model Card template, released in the `huggingface_hub` library [modelcard_template.md file](https://github.com/huggingface/huggingface_hub/blob/main/src/huggingface_hub/templates/modelcard_template.md), drawing together Model Card work in academia and throughout the industry.\n\n2) An [Annotated Model Card Template](./model-card-annotated), which details how to fill the card out.\n\n3) A [Model Card Creator Tool](https://huggingface.co/spaces/huggingface/Model_Cards_Writing_Tool), to ease card creation without needing to program, and to help teams share the work of different sections.\n\n4) A [User Study](./model-cards-user-studies) on Model Card usage at Hugging Face\n\n5) A [Landscape Analysis and Literature Review](./model-card-landscape-analysis) of the state of the art in model documentation.\n\nWe also include an [Appendix](./model-card-appendix) with further details from this work.\n\n---\n\n**Please cite as:** \nOzoani, Ezi and Gerc",
+              "filename": "docs/hub/model-card-guidebook.md"
+            },
+            {
+              "start": 6500,
+              "content": "ot2/model_card.md)\n* [Perspective API Model Cards](https://github.com/conversationai/perspectiveapi/tree/main/model-cards)\n* See https://github.com/ivylee/model-cards-and-datasheets for more examples!\n\n### MODEL CARDS FOR LARGE LANGUAGE MODELS\nLarge language models are often released with associated documentation. Large language models that have an associated model card (or related documentation tool) include: \n\n\n* [Big Science BLOOM model card](https://huggingface.co/bigscience/bloom)\n* [GPT-2 Model Card](https://github.com/openai/gpt-2/blob/master/model_card.md) \n* [GPT-3 Model Card](https://github.com/openai/gpt-3/blob/master/model-card.md)\n* [DALL-E 2 Preview System Card](https://github.com/openai/dalle-2-preview/blob/main/system-card.md)\n* [OPT-175B model card](https://arxiv.org/pdf/2205.01068.pdf)\n\n### MODEL CARD GENERATION TOOLS\nTools for programmatically or interactively generating model cards include: \n\n* [Salesforce Model Card Creation](https://help.salesforce.com/s/articleVi",
+              "filename": "docs/hub/model-card-appendix.md"
+            }
+          ],
+          "tool_call_id": "h6d0mab5n",
+          "metadata": null,
+          "timestamp": "2026-04-04T12:24:44.652841+00:00",
+          "part_kind": "tool-return"
+        }
+      ],
+      "instructions": "You are an expert Hugging Face MLOps Assistant.  \n\nUse the search tool to find relevant information from the documentation before answering questions.  \n\nIf you can find specific information through search, use it to provide accurate answers.\n\nAlways include references by citing the filename of the source material you used.\nConstruct the full path to the GitHub repository using this base URL:\nhttps://github.com/huggingface/hub-docs/blob/main/\n\nFormat your citations like this: [Source: filename.md](https://github.com/huggingface/hub-docs/blob/main/filename.md)\n\nCRITICAL FORMATTING RULES:\n1. Never output a single \"wall of text\".\n2. Use bullet points or numbered lists for features, steps, or benefits.\n3. Bold **key technical terms** (like Hugging Face DLCs, TGI, etc.) to make them scannable.\n4. If providing links, always format them as clean Markdown links: [Link Title](URL). NEVER output raw URLs or weird text like \"link LINK TITLE\".\n\nIf the search doesn't return relevant results, let the user know and provide general guidance.",
+      "kind": "request"
+    },
+    {
+      "parts": [
+        {
+          "content": "A model card is a document that provides information about a machine learning model, including its usage, limitations, and potential biases. Model cards are essential for transparency and explainability in AI.\n\nHere are some key points about model cards:\n\n* Model cards provide a structured format for documenting machine learning models.\n* They include information about the model's development, testing, and deployment.\n* Model cards are used to communicate the potential risks and limitations of a model.\n* They help to promote transparency and explainability in AI.\n\nReferences:\n\n[Source: model-card-appendix.md](https://github.com/huggingface/hub-docs/blob/main/docs/hub/model-card-appendix.md)\n\n[Source: model-card-guidebook.md](https://github.com/huggingface/hub-docs/blob/main/docs/hub/model-card-guidebook.md)",
+          "id": null,
+          "part_kind": "text"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1504,
+        "cache_write_tokens": 0,
+        "cache_read_tokens": 0,
+        "output_tokens": 167,
+        "input_audio_tokens": 0,
+        "cache_audio_read_tokens": 0,
+        "output_audio_tokens": 0,
+        "details": {}
+      },
+      "model_name": "llama-3.1-8b-instant",
+      "timestamp": "2026-04-04T12:24:45+00:00",
+      "kind": "response",
+      "provider_name": "groq",
+      "provider_details": {
+        "finish_reason": "stop"
+      },
+      "provider_response_id": "chatcmpl-5370b4b0-74bf-4bd9-9f26-55512c74cedb",
+      "finish_reason": "stop"
+    }
+  ],
+  "source": "user"
+}
