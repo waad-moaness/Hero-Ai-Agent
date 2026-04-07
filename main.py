@@ -11,18 +11,15 @@ import logs
 import asyncio
 
 
-REPO_OWNER = "DataTalksClub"
-REPO_NAME = "faq"
-
+REPO_OWNER = "huggingface"
+REPO_NAME = "hub-docs"
 
 def initialize_index():
-    print(f"Starting AI FAQ Assistant for {REPO_OWNER}/{REPO_NAME}")
+    print(f"Starting AI Assistant for {REPO_OWNER}/{REPO_NAME}")
     print("Initializing data ingestion...")
 
-    def filter(doc):
-        return 'data-engineering' in doc['filename']
 
-    index = ingest.index_data(REPO_OWNER, REPO_NAME, filter=filter)
+    index = ingest.index_data(REPO_OWNER, REPO_NAME)
     print("Data indexing completed successfully!")
     return index
 
