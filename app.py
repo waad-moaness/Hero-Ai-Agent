@@ -13,7 +13,6 @@ def init_agent():
     repo_name = "hub-docs"
 
 
-    st.write("🔄 Indexing repo...")
     index = ingest.index_data(repo_owner, repo_name)
     agent = search_agent.init_agent(index, repo_owner, repo_name)
     return agent
