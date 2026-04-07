@@ -111,8 +111,8 @@ This project is licensed under the **MIT License**.
 
 ##  Demo 
 
-[https://hero-ai-huggingface-agent.streamlit.app]
+Try the agent yourself [https://hero-ai-huggingface-agent.streamlit.app]
 
 ## Video Demo 
 
-Watch demo video : [https://drive.google.com/file/d/1s-E7TBzOjn_uSEdDkU1DJXXnSQQgkV0j/view?usp=sharing]
+Watch demo video on how to setup the agent locally: [https://drive.google.com/file/d/1s-E7TBzOjn_uSEdDkU1DJXXnSQQgkV0j/view?usp=sharing]
