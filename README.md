@@ -95,7 +95,6 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 ---
 
 
-
 ##  Credits / Acknowledgments
 
 - Hugging Face documentation repository
@@ -105,13 +104,11 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
-##  License
-
-This project is licensed under the **MIT License**.
-
 ##  Demo 
 
 Try the agent yourself [https://hero-ai-huggingface-agent.streamlit.app]
+
+---
 
 ## Video Demo 
 
