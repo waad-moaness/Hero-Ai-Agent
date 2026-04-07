@@ -32,7 +32,6 @@ Instead of manually searching through documentation, this assistant:
 
 ###  Requirements
 - Python **3.12+**
-- uv installed
 - A [Groq API key](https://console.groq.com/)
 
 ### Setup
@@ -51,7 +50,7 @@ venv\Scripts\activate      # Windows
 pip install -e .
 
 # Set your API key
-export GROQ_API_KEY=your_groq_api_key_here
+export GROQ_API_KEY="your_groq_api_key_here"
 ```
 
 ---
@@ -68,12 +67,12 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
-### 💬 Example Questions
+###  Example Questions
 - How do I deploy a model on Hugging Face Spaces?
 - How to add API keys securely?
 - What is Text Generation Inference (TGI)?
 
-### 🧠 How it works
+###  How it works
 1. Downloads Hugging Face documentation from GitHub
 2. Parses Markdown files and extracts content
 3. Splits content into chunks
@@ -82,7 +81,7 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
-## ✨ Features
+##  Features
 
 -  **Semantic Search** over Hugging Face docs
 -  **AI Agent** powered by `pydantic-ai`
@@ -96,19 +95,8 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 ---
 
 
-## 🧪 Tests
 
-No automated tests are currently implemented.
-
-Manual testing:
-- Run the application
-- Ask different questions
-- Verify responses and sources
-
-
----
-
-## 🙏 Credits / Acknowledgments
+##  Credits / Acknowledgments
 
 - Hugging Face documentation repository
 - `pydantic-ai` for agent framework
@@ -117,6 +105,11 @@ Manual testing:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License**.
+
+##  Demo 
+
+
+# Video Demo 

@@ -1,0 +1,8 @@
+minsearch>=0.0.5
+pydantic-ai==1.0.9
+python-frontmatter>=1.1.0
+requests>=2.33.1
+streamlit>=1.56.0
+
+# Optional / dev dependencies
+jupyter>=1.1.1
