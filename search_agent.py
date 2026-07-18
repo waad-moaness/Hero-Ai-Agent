@@ -33,7 +33,7 @@ def init_agent(index, repo_owner, repo_name):
         name="gh_agent",
         instructions=system_prompt,
         tools=[search_tool.search],
-        model='groq:llama-3.1-8b-instant'
+        model='groq:llama-3.3-70b-versatile'
     )
 
     return agent
