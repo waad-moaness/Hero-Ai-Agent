@@ -106,7 +106,7 @@ Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ##  Demo 
 
-Try the agent yourself [https://hero-ai-huggingface-agent.streamlit.app]
+Try the agent yourself [https://hero-ai-huggingface-agent.streamlit.app/]
 
 ---
 
